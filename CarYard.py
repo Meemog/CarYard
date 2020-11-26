@@ -1,6 +1,6 @@
 import sqlite3
 
-connection = sqlite3.connect("NewsPaper.db")
+connection = sqlite3.connect("Newspaper.db")
 cursor = connection.cursor()
 
 cursor.execute("""
