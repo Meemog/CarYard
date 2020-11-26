@@ -4,12 +4,18 @@ connection = sqlite3.connect("NewsPaper.db")
 cursor = connection.cursor()
 
 cursor.execute("""
-CREATE TABLE tblStaff
+CREATE TABLE tblSale
 (
+saleID VARCHAR(8),
+regNo VARCHAR(8),
+custID VARCHAR(8),
 staffID VARCHAR(8),
-firstName VARCHAR(15),
-surName VARCHAR(15),
-primary key (staffID)
+date DATE,
+salePrice DECIMAL(5,2),
+primary key (saleID),
+FOREIGN KEY (regNO) REFERENCES tblCar(regNo),
+FOREIGN KEY (custID) REFERENCES tblCustomer(custID),
+FOREIGN KEY (staffID) REFERENCES tblStaff(staffID)
 )
 """)
 
